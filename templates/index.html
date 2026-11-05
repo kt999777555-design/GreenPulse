@@ -10,16 +10,14 @@
 :root{--ink:#18352a;--muted:#6b8176;--green:#287653;--lime:#c9f36a;--mint:#e9f5ec;--paper:#f5f8f3;--white:#fff;--line:#e2ebe2;--shadow:0 14px 40px rgba(24,53,42,.08)}
 *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
 body{font-family:'DM Sans',Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
-button,input,select{font:inherit}
-button{cursor:pointer}
+button,input,select{font:inherit}button{cursor:pointer}
 .topbar{position:sticky;top:0;z-index:20;background:rgba(16,44,34,.96);backdrop-filter:blur(12px);color:white;padding:15px max(5%,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{font:800 1.55rem Manrope,sans-serif;letter-spacing:-1px;color:white;text-decoration:none}.brand span{color:var(--lime)}
 .nav{display:flex;gap:23px;flex-wrap:wrap}.nav a{color:#e3eee5;text-decoration:none;font-size:.88rem;font-weight:600}.nav a:hover{color:var(--lime)}
 .hero{background:radial-gradient(circle at 85% 20%,rgba(201,243,106,.16),transparent 27%),linear-gradient(125deg,#102c22,#1e5a3e 72%,#287653);color:white;padding:78px max(5%,calc((100% - 1180px)/2)) 88px;position:relative;overflow:hidden}
 .hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:8%;bottom:-220px;box-shadow:0 0 0 35px rgba(255,255,255,.025),0 0 0 75px rgba(255,255,255,.02)}
 .eyebrow{color:var(--lime);font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:15px}
-.hero h1{font:800 clamp(2.5rem,6vw,4.7rem)/1.06 Manrope,sans-serif;letter-spacing:-2.5px;max-width:720px;margin-bottom:20px}
-.hero h1 span{color:var(--lime)}
+.hero h1{font:800 clamp(2.5rem,6vw,4.7rem)/1.06 Manrope,sans-serif;letter-spacing:-2.5px;max-width:720px;margin-bottom:20px}.hero h1 span{color:var(--lime)}
 .hero p{max-width:620px;color:#d6e8dc;font-size:1.05rem}
 .primary-btn,.soft-btn,.outline-btn{border:0;border-radius:12px;padding:12px 18px;font-weight:700;transition:.2s}
 .primary-btn{background:var(--lime);color:#173625;margin-top:25px}.primary-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px #071b1266}
@@ -33,8 +31,7 @@ h2{font:800 clamp(1.5rem,3vw,2.1rem) Manrope,sans-serif;letter-spacing:-.8px;mar
 .section-desc{color:var(--muted);font-size:.94rem;max-width:560px;margin-top:5px}
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .card{background:var(--white);border:1px solid var(--line);border-radius:19px;padding:22px;box-shadow:var(--shadow)}
-.metric{position:relative;overflow:hidden;min-height:160px}
-.metric:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:var(--mint);right:-25px;top:-25px}
+.metric{position:relative;overflow:hidden;min-height:160px}.metric:after{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:var(--mint);right:-25px;top:-25px}
 .metric-top{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
 .metric-icon{width:39px;height:39px;border-radius:12px;background:var(--mint);display:grid;place-items:center;font-size:1.15rem}
 .metric-label{font-weight:700;color:#587064;font-size:.9rem}
@@ -66,25 +63,44 @@ input:focus,select:focus{border-color:#62a77d;box-shadow:0 0 0 3px #28765318}
 .user-message{background:#dff0e2;margin-left:auto;border-bottom-right-radius:4px}
 .ai-message{background:white;border:1px solid var(--line);border-bottom-left-radius:4px}
 .chat-label{display:block;font-size:.7rem;letter-spacing:.5px;text-transform:uppercase;font-weight:800;color:var(--green);margin-bottom:4px}
-.chat-controls{display:flex;gap:9px}.chat-controls input{flex:1;min-width:0}
-.chat-controls button{margin:0}
+.chat-controls{display:flex;gap:9px}.chat-controls input{flex:1;min-width:0}.chat-controls button{margin:0}
 .result{background:#f2f8f2;border:1px solid #dfecdf;border-radius:12px;padding:14px;margin-top:14px;white-space:pre-wrap;font-size:.9rem}
 .plan-item{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:11px;margin-top:9px;background:#fbfdfb}
 .plan-item input{width:18px;height:18px;margin-top:3px;accent-color:var(--green)}
 .progress-track{height:10px;background:#edf3ed;border-radius:20px;overflow:hidden;margin:12px 0 5px}
 .progress-fill{height:100%;background:var(--green);width:0;transition:width .3s}
+
+/* ECOBATTLE STYLES */
+.battle-hero{background:linear-gradient(125deg,#102c22,#287653);color:white;border-radius:20px;padding:25px;margin-bottom:18px}
+.battle-hero h3{font:800 1.5rem Manrope,sans-serif;margin-bottom:6px}
+.battle-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.battle-stat{background:rgba(255,255,255,.12);padding:14px;border-radius:12px}
+.battle-stat strong{display:block;font:800 1.5rem Manrope,sans-serif;color:var(--lime)}
+.battle-stat span{font-size:.78rem;color:#d6e8dc}
+.battle-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.mission{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line);border-radius:13px;margin-top:10px;background:#fbfdfb}
+.mission-info{flex:1}.mission-info strong{display:block;font-size:.9rem}.mission-info small{color:var(--muted);font-size:.76rem}
+.mission button{border:0;background:var(--green);color:white;padding:9px 12px;border-radius:9px;font-weight:700;font-size:.8rem}
+.mission button:disabled{background:#e5eee5;color:#62806b;cursor:default}
+.battle-progress{height:12px;background:#edf3ed;border-radius:20px;overflow:hidden;margin:12px 0}
+.battle-progress-fill{height:100%;width:0;background:linear-gradient(90deg,#a7d957,#287653);transition:width .3s}
+.badge-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:15px}
+.badge{border:1px solid var(--line);border-radius:12px;padding:13px;text-align:center;background:#fbfdfb}
+.badge.locked{opacity:.4;filter:grayscale(1)}
+.badge span{font-size:1.7rem;display:block}.badge strong{font-size:.8rem;display:block}.badge small{font-size:.7rem;color:var(--muted)}
+.battle-note{font-size:.78rem;color:var(--muted);margin-top:12px}
 footer{margin-top:65px;background:#102c22;color:#d6e8dc;padding:35px 24px;text-align:center}
 footer strong{font:800 1.4rem Manrope;color:white}footer span{color:var(--lime)}
 .footer-note{font-size:.8rem;margin-top:8px;color:#a9c1b1}
-@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel-grid{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}.nav{gap:14px}}
-@media(max-width:540px){.hero{padding-top:58px;padding-bottom:65px}.hero h1{letter-spacing:-1.5px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:16px}.metric{min-height:145px}.metric-value{font-size:1.45rem}.form-grid{grid-template-columns:1fr}.section{padding-top:43px}.chat-controls{flex-wrap:wrap}.chat-controls input{flex-basis:100%}.bar-row{grid-template-columns:70px 1fr 48px}}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel-grid,.battle-layout{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}.nav{gap:14px}}
+@media(max-width:540px){.hero{padding-top:58px;padding-bottom:65px}.hero h1{letter-spacing:-1.5px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:16px}.metric{min-height:145px}.metric-value{font-size:1.45rem}.form-grid{grid-template-columns:1fr}.section{padding-top:43px}.chat-controls{flex-wrap:wrap}.chat-controls input{flex-basis:100%}.bar-row{grid-template-columns:70px 1fr 48px}.battle-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.battle-stat{padding:10px}.battle-stat strong{font-size:1.2rem}}
 </style>
 </head>
 <body>
 <header class="topbar">
   <a class="brand" href="#">Green<span>Pulse</span> 🌱</a>
   <nav class="nav" aria-label="Main navigation">
-    <a href="#dashboard">Dashboard</a><a href="#records">My Data</a><a href="#greenai">GreenAI</a><a href="#analytics">Analytics</a><a href="#waste">WasteWise</a><a href="#planner">EcoPlanner</a>
+    <a href="#dashboard">Dashboard</a><a href="#records">My Data</a><a href="#ecobattle">EcoBattle ⚔️</a><a href="#greenai">GreenAI</a><a href="#analytics">Analytics</a><a href="#waste">WasteWise</a><a href="#planner">EcoPlanner</a>
   </nav>
 </header>
 
@@ -128,6 +144,45 @@ footer strong{font:800 1.4rem Manrope;color:white}footer span{color:var(--lime)}
       <div id="recordList" class="record-list"><div class="empty">No records yet. Add your first daily entry.</div></div>
     </article>
   </div>
+</section>
+
+<!-- ECOBATTLE SECTION -->
+<section class="section" id="ecobattle">
+  <div class="section-head"><div><div class="kicker">Play for a greener planet</div><h2>⚔️ EcoBattle</h2><p class="section-desc">Turn sustainable habits into a game. Complete missions, earn points, build streaks and defeat the weekly EcoBoss!</p></div></div>
+  <div class="battle-hero">
+    <div class="eyebrow">YOUR PERSONAL ECO JOURNEY</div>
+    <h3>Every action earns you a victory. 🌍</h3>
+    <p>Small actions. Big ambitions. Can you become an EcoChampion?</p>
+    <div class="battle-stats">
+      <div class="battle-stat"><strong id="battlePoints">0</strong><span>EcoPoints</span></div>
+      <div class="battle-stat"><strong id="battleStreak">0 🔥</strong><span>Day streak</span></div>
+      <div class="battle-stat"><strong id="battleCompleted">0</strong><span>Missions completed</span></div>
+    </div>
+  </div>
+  <div class="battle-layout">
+    <article class="card">
+      <h3 class="panel-title">🎯 Today's missions</h3><p class="muted">Complete these real-world actions to earn EcoPoints.</p>
+      <div id="dailyMissions"></div>
+      <div style="margin-top:20px;font-weight:700" id="dailyProgressText">0/5 missions completed</div>
+      <div class="battle-progress"><div class="battle-progress-fill" id="dailyProgress"></div></div>
+      <div class="status" id="battleStatus" aria-live="polite"></div>
+    </article>
+    <div>
+      <article class="card">
+        <h3 class="panel-title">👹 Weekly EcoBoss</h3><p class="muted">Complete 10 missions this week to defeat the EcoBoss!</p>
+        <div style="font-size:3rem;text-align:center;margin:16px">🌪️</div>
+        <h3 style="text-align:center" id="bossCount">0/10 missions</h3>
+        <div class="battle-progress"><div class="battle-progress-fill" id="bossProgress"></div></div>
+        <p class="muted" id="bossMessage" style="text-align:center">The EcoBoss is waiting. Start your missions!</p>
+        <div style="text-align:center;margin-top:15px"><strong style="color:var(--green)">🏆 Reward: 100 EcoPoints</strong></div>
+      </article>
+      <article class="card" style="margin-top:18px">
+        <h3 class="panel-title">🏅 Your achievements</h3><p class="muted">Unlock badges as you progress.</p>
+        <div class="badge-grid" id="badgeGrid"></div>
+      </article>
+    </div>
+  </div>
+  <p class="battle-note">EcoPoints and achievements are game rewards, not measured environmental savings. Missions are self-reported. Progress is stored locally in this browser and is not a shared leaderboard.</p>
 </section>
 
 <section class="section" id="analytics">
@@ -278,7 +333,7 @@ document.getElementById("recordForm").addEventListener("submit",function(e){
 });
 function resetRecordForm(){
   document.getElementById("recordForm").reset();
-  document.getElementById("recordDate").value=new Date().toISOString().slice(0,10);
+  document.getElementById("recordDate").value=localDateKey();
   document.getElementById("recordStatus").textContent="";
 }
 
@@ -366,8 +421,131 @@ function renderPlan(){
 }
 function clearPlan(){localStorage.removeItem(PLAN_KEY);renderPlan();}
 
-document.getElementById("recordDate").value=new Date().toISOString().slice(0,10);
-updateDashboard();renderPlan();
+// ================= ECOBATTLE GAME SYSTEM =================
+const BATTLE_KEY = "greenpulse_ecobattle_v1";
+const battleMissions = [
+  "Switch off unnecessary lights and appliances.",
+  "Avoid wasting water during your daily routine.",
+  "Use a reusable bottle or bag instead of a disposable one.",
+  "Sort your recyclable waste correctly.",
+  "Avoid throwing away food that can be safely used."
+];
+
+function localDateKey(date = new Date()){
+  const y=date.getFullYear(),m=String(date.getMonth()+1).padStart(2,"0"),d=String(date.getDate()).padStart(2,"0");
+  return `${y}-${m}-${d}`;
+}
+function getBattleWeek(date = new Date()){
+  const d=new Date(date);d.setHours(0,0,0,0);
+  const day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);
+  return localDateKey(d);
+}
+function loadBattle(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(BATTLE_KEY)||"null");
+    if(saved&&typeof saved==="object"){
+      return {
+        points:Number(saved.points)||0,
+        history:saved.history&&typeof saved.history==="object"?saved.history:{},
+        awards:Array.isArray(saved.awards)?saved.awards:[],
+        bossRewards:Array.isArray(saved.bossRewards)?saved.bossRewards:[]
+      };
+    }
+  }catch(error){}
+  return {points:0,history:{},awards:[],bossRewards:[]};
+}
+let battle=loadBattle();
+function saveBattle(){localStorage.setItem(BATTLE_KEY,JSON.stringify(battle));}
+function getTodayMissions(){
+  const today=localDateKey();
+  if(!Array.isArray(battle.history[today]))battle.history[today]=[];
+  return battle.history[today];
+}
+function getCompletedCount(){
+  return Object.values(battle.history).reduce((total,missions)=>total+(Array.isArray(missions)?missions.length:0),0);
+}
+function getWeeklyCount(){
+  const currentWeek=getBattleWeek();let count=0;
+  Object.entries(battle.history).forEach(([date,missions])=>{
+    if(getBattleWeek(new Date(date+"T12:00:00"))===currentWeek&&Array.isArray(missions))count+=missions.length;
+  });
+  return count;
+}
+function getStreak(){
+  let streak=0;const date=new Date();date.setHours(12,0,0,0);
+  const today=localDateKey(date),yesterday=new Date(date);yesterday.setDate(yesterday.getDate()-1);
+  if(!battle.history[today]?.length&&!battle.history[localDateKey(yesterday)]?.length)return 0;
+  while(true){
+    const key=localDateKey(date);
+    if(!battle.history[key]?.length)break;
+    streak++;date.setDate(date.getDate()-1);
+  }
+  return streak;
+}
+function checkBattleRewards(){
+  const completed=getCompletedCount(),streak=getStreak();
+  const badges=[
+    {id:"first",name:"First Victory",icon:"🌱",description:"Complete 1 mission",unlocked:completed>=1},
+    {id:"five",name:"Eco Explorer",icon:"🌿",description:"Complete 5 missions",unlocked:completed>=5},
+    {id:"twenty",name:"Green Guardian",icon:"🌳",description:"Complete 20 missions",unlocked:completed>=20},
+    {id:"fifty",name:"Eco Legend",icon:"🏆",description:"Complete 50 missions",unlocked:completed>=50},
+    {id:"streak7",name:"Consistency King",icon:"🔥",description:"Reach a 7-day streak",unlocked:streak>=7},
+    {id:"boss",name:"Boss Slayer",icon:"⚔️",description:"Defeat the EcoBoss",unlocked:battle.bossRewards.length>0}
+  ];
+  badges.forEach(badge=>{if(badge.unlocked&&!battle.awards.includes(badge.id))battle.awards.push(badge.id);});
+  return badges;
+}
+function completeMission(index){
+  const today=getTodayMissions();
+  if(today.includes(index))return;
+  today.push(index);battle.points+=20;
+  if(today.length===5)battle.points+=25;
+  const streak=getStreak();
+  if(streak>=3&&!battle.awards.includes("streak3bonus")){battle.points+=30;battle.awards.push("streak3bonus");}
+  if(streak>=7&&!battle.awards.includes("streak7bonus")){battle.points+=70;battle.awards.push("streak7bonus");}
+  const week=getBattleWeek();
+  if(getWeeklyCount()>=10&&!battle.bossRewards.includes(week)){battle.points+=100;battle.bossRewards.push(week);}
+  saveBattle();renderBattle();
+}
+function renderBattle(){
+  const today=getTodayMissions(),completed=getCompletedCount(),streak=getStreak(),weekly=getWeeklyCount();
+  document.getElementById("battlePoints").textContent=battle.points;
+  document.getElementById("battleStreak").textContent=streak+" 🔥";
+  document.getElementById("battleCompleted").textContent=completed;
+  const missionBox=document.getElementById("dailyMissions");missionBox.innerHTML="";
+  battleMissions.forEach((mission,index)=>{
+    const done=today.includes(index),row=document.createElement("div");row.className="mission";
+    const info=document.createElement("div");info.className="mission-info";
+    const title=document.createElement("strong");title.textContent=mission;
+    const detail=document.createElement("small");detail.textContent=done?"Completed ✓":"Reward: 20 EcoPoints";
+    info.append(title,detail);
+    const button=document.createElement("button");button.textContent=done?"Completed ✓":"+20 Points";button.disabled=done;
+    button.addEventListener("click",()=>completeMission(index));
+    row.append(info,button);missionBox.appendChild(row);
+  });
+  document.getElementById("dailyProgressText").textContent=`${today.length}/5 missions completed`;
+  document.getElementById("dailyProgress").style.width=`${today.length/5*100}%`;
+  document.getElementById("battleStatus").textContent=today.length===5?"🎉 All today's missions completed! You earned your daily bonus.":"Complete all five missions to earn an extra 25 EcoPoints.";
+  document.getElementById("bossCount").textContent=`${Math.min(weekly,10)}/10 missions`;
+  document.getElementById("bossProgress").style.width=`${Math.min(weekly/10*100,100)}%`;
+  const bossDefeated=battle.bossRewards.includes(getBattleWeek());
+  document.getElementById("bossMessage").textContent=bossDefeated?"🏆 EcoBoss defeated! Your weekly reward is secured.":weekly>=10?"The EcoBoss has been defeated!":"Keep completing missions to weaken the EcoBoss!";
+  const badgeBox=document.getElementById("badgeGrid");badgeBox.innerHTML="";
+  checkBattleRewards().forEach(badge=>{
+    const item=document.createElement("div");item.className="badge"+(badge.unlocked?"":" locked");
+    const icon=document.createElement("span");icon.textContent=badge.icon;
+    const name=document.createElement("strong");name.textContent=badge.name;
+    const description=document.createElement("small");description.textContent=badge.description;
+    item.append(icon,name,description);badgeBox.appendChild(item);
+  });
+  saveBattle();
+}
+// ================= END ECOBATTLE =================
+
+document.getElementById("recordDate").value=localDateKey();
+updateDashboard();
+renderPlan();
+renderBattle();
 </script>
 </body>
 </html>
