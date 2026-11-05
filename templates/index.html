@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GreenPulse | Sustainable Living</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f3f8f3;
+    color: #20352a;
+}
+
+header {
+    background: #123c2a;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    font-size: 27px;
+}
+
+header h1 span {
+    color: #8be28e;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #8be28e;
+}
+
+.hero {
+    padding: 75px 7%;
+    background: linear-gradient(120deg, #123c2a, #26794b);
+    color: white;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 600px;
+    line-height: 1.7;
+    color: #e0f3e3;
+}
+
+.hero button {
+    margin-top: 25px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 7px;
+    background: #a5efa3;
+    color: #123c2a;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container {
+    padding: 45px 7%;
+}
+
+.section-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #174b32;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: #26794b;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+.stat {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 12px 0;
+    color: #26794b;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd9cf;
+    border-radius: 7px;
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+button {
+    padding: 11px 18px;
+    background: #26794b;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+button:hover {
+    background: #174b32;
+}
+
+.result {
+    background: #eaf6ec;
+    border-left: 4px solid #26794b;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.chat-box {
+    background: #f7fbf7;
+    border: 1px solid #dce9df;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 160px;
+    max-height: 350px;
+    overflow-y: auto;
+    margin: 15px 0;
+}
+
+.chat-message {
+    padding: 12px;
+    border-radius: 9px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.user-message {
+    background: #dff2e2;
+    margin-left: 12%;
+}
+
+.ai-message {
+    background: #e9edf0;
+    margin-right: 12%;
+}
+
+.chat-label {
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #26794b;
+}
+
+.chat-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.chat-controls input {
+    flex: 1;
+    min-width: 180px;
+}
+
+.secondary-button {
+    background: #60756a;
+}
+
+.secondary-button:hover {
+    background: #405449;
+}
+
+.plan-item {
+    background: #f0f7f0;
+    padding: 12px;
+    border-radius: 7px;
+    margin: 8px 0;
+}
+
+.plan-item input {
+    width: auto;
+    margin-right: 8px;
+}
+
+footer {
+    background: #123c2a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.small-text {
+    color: #66766b;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+@media(max-width: 650px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>Green<span>Pulse</span></h1>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#greenai">GreenAI</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#waste">WasteWise</a>
+        <a href="#planner">EcoPlanner</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h2>Small Changes.<br>Greener Future.</h2>
+
+    <p>
+        Discover how everyday decisions can create a sustainable future.
+        Track your environmental habits, explore smarter solutions
+        and use artificial intelligence to make greener choices.
+    </p>
+
+    <button onclick="document.getElementById('dashboard').scrollIntoView()">
+        Explore GreenPulse
+    </button>
+
+</section>
+
+
+<section class="container" id="dashboard">
+
+    <h2 class="section-title">Your Sustainability Dashboard</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>🌱 GreenScore</h3>
+            <div class="stat" id="greenScore">75/100</div>
+            <p>Your illustrative sustainability score.</p>
+        </div>
+
+        <div class="card">
+            <h3>💧 Water</h3>
+            <div class="stat">150 L</div>
+            <p>Example daily water usage.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Energy</h3>
+            <div class="stat">8 kWh</div>
+            <p>Example daily energy usage.</p>
+        </div>
+
+        <div class="card">
+            <h3>♻️ Waste</h3>
+            <div class="stat">2 kg</div>
+            <p>Example daily waste generated.</p>
+        </div>
+
+    </div>
+
+    <p class="small-text">
+        Dashboard figures are illustrative sample values, not live measurements.
+    </p>
+
+</section>
+
+
+<section class="container">
+
+    <h2 class="section-title">🌿 Daily Eco Tips</h2>
+
+    <div class="card">
+
+        <h3 id="tipTitle">Make Every Drop Count</h3>
+
+        <p id="tipText">
+            Turn off taps when not in use and repair leaking taps
+            to reduce unnecessary water consumption.
+        </p>
+
+        <button onclick="showTip()">Show Another Tip</button>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="greenai">
+
+    <h2 class="section-title">🤖 GreenAI Assistant</h2>
+
+    <div class="card">
+
+        <h3>Ask GreenAI Anything About Sustainability</h3>
+
+        <p>
+            Your AI-powered environmental assistant.
+            Ask questions, explore ideas and discover practical solutions.
+        </p>
+
+        <div class="chat-box" id="chatBox" aria-live="polite">
+
+            <div class="chat-message ai-message">
+                <span class="chat-label">GreenAI</span>
+                Hello! I'm GreenAI. Ask me anything about sustainability,
+                climate change, recycling, renewable energy or the environment!
+            </div>
+
+        </div>
+
+        <div class="chat-controls">
+
+            <input
+                type="text"
+                id="userQuestion"
+                placeholder="Ask GreenAI something..."
+                maxlength="2000"
+                onkeydown="handleEnter(event)"
+            >
+
+            <button id="askButton" onclick="askGreenAI()">
+                Ask GreenAI
+            </button>
+
+            <button class="secondary-button" onclick="clearChat()">
+                Clear Chat
+            </button>
+
+        </div>
+
+        <p class="small-text">
+            AI-generated information should be checked against reliable sources
+            before making important decisions.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="analytics">
+
+    <h2 class="section-title">📊 EcoAnalytics</h2>
+
+    <div class="card">
+
+        <h3>Analyze Your Resource Consumption</h3>
+
+        <label>Daily Water Consumption (Litres)</label>
+        <input type="number" id="water" placeholder="Example: 150" min="0">
+
+        <label>Daily Electricity Consumption (kWh)</label>
+        <input type="number" id="electricity" placeholder="Example: 8" min="0">
+
+        <button onclick="analyzeUsage()">Analyze My Usage</button>
+
+        <div class="result" id="analysisResult">
+            Enter your consumption values to receive an analysis.
+        </div>
+
+        <p class="small-text">
+            The thresholds used here are simplified demonstration values,
+            not official environmental standards.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="waste">
+
+    <h2 class="section-title">♻️ WasteWise</h2>
+
+    <div class="card">
+
+        <h3>Learn How to Manage Waste</h3>
+
+        <label>Select a waste category</label>
+
+        <select id="wasteType">
+
+            <option value="plastic">Plastic</option>
+            <option value="paper">Paper</option>
+            <option value="glass">Glass</option>
+            <option value="organic">Organic Waste</option>
+            <option value="electronic">Electronic Waste</option>
+
+        </select>
+
+        <button onclick="checkWaste()">Get Disposal Guidance</button>
+
+        <div class="result" id="wasteResult">
+            Select a category to learn about responsible disposal.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="planner">
+
+    <h2 class="section-title">🌍 EcoPlanner</h2>
+
+    <div class="card">
+
+        <h3>Create Your Sustainability Plan</h3>
+
+        <label>Choose your goal</label>
+
+        <select id="ecoGoal">
+
+            <option value="water">Save Water</option>
+            <option value="energy">Save Energy</option>
+            <option value="waste">Reduce Waste</option>
+            <option value="plastic">Reduce Plastic</option>
+
+        </select>
+
+        <label>Choose duration</label>
+
+        <select id="ecoDays">
+
+            <option value="3">3 Days</option>
+            <option value="7">7 Days</option>
+            <option value="14">14 Days</option>
+
+        </select>
+
+        <button onclick="generatePlan()">Generate My Plan</button>
+
+        <div class="result" id="planResult">
+            Your personalized eco-plan will appear here.
+        </div>
+
+        <div id="progressArea"></div>
+
+        <div class="result" id="progressResult">
+            Complete your activities to track your progress.
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>GreenPulse 🌱</h3>
+
+    <p>Small Changes. Greener Future.</p>
+
+    <p>Human Intelligence + Artificial Intelligence</p>
+
+</footer>
+
+
+<script>
+
+// ---------------- GREENAI CHAT ----------------
+
+let chatHistory = [];
+let isWaiting = false;
+
+async function askGreenAI() {
+
+    const input = document.getElementById("userQuestion");
+    const button = document.getElementById("askButton");
+    const question = input.value.trim();
+
+    if (!question || isWaiting) {
+        return;
+    }
+
+    if (question.length > 2000) {
+        return;
+    }
+
+    isWaiting = true;
+    button.disabled = true;
+    button.textContent = "Thinking...";
+
+    addMessage("You", question, "user-message");
+
+    input.value = "";
+
+    const loading = addMessage(
+        "GreenAI",
+        "Thinking... 🌱",
+        "ai-message"
+    );
+
+    try {
+
+        const response = await fetch("/api/chat", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+                message: question,
+                history: chatHistory
+
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Something went wrong.");
+        }
+
+        loading.textContent = "";
+        addLabel(loading, "GreenAI");
+
+        loading.appendChild(
+            document.createTextNode(data.reply)
+        );
+
+        chatHistory.push(
+            { role: "user", text: question },
+            { role: "model", text: data.reply }
+        );
+
+        chatHistory = chatHistory.slice(-12);
+
+    }
+
+    catch (error) {
+
+        loading.textContent = "";
+        addLabel(loading, "GreenAI");
+
+        loading.appendChild(
+            document.createTextNode(error.message)
+        );
+
+    }
+
+    finally {
+
+        isWaiting = false;
+        button.disabled = false;
+        button.textContent = "Ask GreenAI";
+
+        input.focus();
+
+    }
+
+}
+
+
+function addMessage(label, message, className) {
+
+    const chatBox = document.getElementById("chatBox");
+
+    const messageDiv = document.createElement("div");
+
+    messageDiv.className = "chat-message " + className;
+
+    addLabel(messageDiv, label);
+
+    messageDiv.appendChild(
+        document.createTextNode(message)
+    );
+
+    chatBox.appendChild(messageDiv);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    return messageDiv;
+
+}
+
+
+function addLabel(element, label) {
+
+    const heading = document.createElement("span");
+
+    heading.className = "chat-label";
+    heading.textContent = label;
+
+    element.appendChild(heading);
+
+}
+
+
+function clearChat() {
+
+    if (isWaiting) {
+        return;
+    }
+
+    chatHistory = [];
+
+    document.getElementById("chatBox").textContent = "";
+
+    addMessage(
+        "GreenAI",
+        "Hello again! What would you like to explore about sustainability?",
+        "ai-message"
+    );
+
+}
+
+
+function handleEnter(event) {
+
+    if (event.key === "Enter") {
+        askGreenAI();
+    }
+
+}
+
+
+// ---------------- ECO TIPS ----------------
+
+const tips = [
+
+    {
+        title: "Save Water",
+        text: "Turn off taps when not in use and repair leaking taps."
+    },
+
+    {
+        title: "Save Electricity",
+        text: "Switch off lights and appliances when they are not needed."
+    },
+
+    {
+        title: "Reduce Plastic",
+        text: "Use reusable bags and bottles instead of disposable alternatives."
+    },
+
+    {
+        title: "Plant Native Species",
+        text: "Native plants can support local biodiversity and pollinators."
+    },
+
+    {
+        title: "Travel Sustainably",
+        text: "Walk, cycle or use public transport when practical."
+    },
+
+    {
+        title: "Reduce Food Waste",
+        text: "Plan meals carefully and store food properly."
+    }
+
+];
+
+
+function showTip() {
+
+    const random = Math.floor(Math.random() * tips.length);
+
+    document.getElementById("tipTitle").textContent =
+        tips[random].title;
+
+    document.getElementById("tipText").textContent =
+        tips[random].text;
+
+}
+
+
+// ---------------- ECO ANALYTICS ----------------
+
+function analyzeUsage() {
+
+    const water = Number(document.getElementById("water").value);
+
+    const electricity = Number(
+        document.getElementById("electricity").value
+    );
+
+    const result = document.getElementById("analysisResult");
+
+    if (
+        document.getElementById("water").value === "" ||
+        document.getElementById("electricity").value === "" ||
+        !Number.isFinite(water) ||
+        !Number.isFinite(electricity) ||
+        water < 0 ||
+        electricity < 0
+    ) {
+
+        result.textContent =
+            "Please enter valid, non-negative numbers for both values.";
+
+        return;
+
+    }
+
+    let message = "🌱 Your Resource Analysis\n\n";
+
+    if (water > 150) {
+
+        message +=
+            "💧 Water: Your entered value is above this demo's reference threshold. Look for opportunities to reduce water use.\n\n";
+
+    }
+
+    else {
+
+        message +=
+            "💧 Water: Your entered value is within this demo's reference threshold. Keep practising water conservation!\n\n";
+
+    }
+
+    if (electricity > 10) {
+
+        message +=
+            "⚡ Electricity: Your entered value is above this demo's reference threshold. Consider improving energy efficiency.\n\n";
+
+    }
+
+    else {
+
+        message +=
+            "⚡ Electricity: Your entered value is within this demo's reference threshold. Keep saving energy!\n\n";
+
+    }
+
+    message +=
+        "These are simplified demo thresholds. Actual resource impact depends on household size, location and other factors.";
+
+    result.textContent = message;
+
+}
+
+
+// ---------------- WASTEWISE ----------------
+
+function checkWaste() {
+
+    const type = document.getElementById("wasteType").value;
+
+    const information = {
+
+        plastic:
+            "♻️ Plastic: Check local recycling rules, separate accepted plastics and avoid single-use plastic where possible.",
+
+        paper:
+            "📄 Paper: Keep paper clean and dry before placing it in an accepted paper recycling stream.",
+
+        glass:
+            "🍾 Glass: Separate glass according to local collection rules. Handle broken glass carefully and follow local disposal guidance.",
+
+        organic:
+            "🌿 Organic Waste: Fruit peels, vegetable scraps and suitable garden waste can often be composted.",
+
+        electronic:
+            "🔋 Electronic Waste: Do not mix electronic waste with ordinary household waste. Use an authorized e-waste collection or recycling facility."
+
+    };
+
+    document.getElementById("wasteResult").textContent =
+        information[type];
+
+}
+
+
+// ---------------- ECOPLANNER ----------------
+
+let totalTasks = 0;
+
+const plans = {
+
+    water: [
+        "Turn off taps while brushing.",
+        "Check for leaking taps.",
+        "Use water carefully while washing.",
+        "Reuse suitable water for plants.",
+        "Take shorter showers where applicable.",
+        "Avoid unnecessary water wastage.",
+        "Review your water-saving habits."
+    ],
+
+    energy: [
+        "Switch off unnecessary lights.",
+        "Unplug unused chargers.",
+        "Use natural daylight when possible.",
+        "Turn off unused appliances.",
+        "Check energy-saving settings.",
+        "Use efficient lighting where possible.",
+        "Review your electricity habits."
+    ],
+
+    waste: [
+        "Separate recyclable waste.",
+        "Avoid wasting food.",
+        "Reuse suitable containers.",
+        "Compost suitable organic waste.",
+        "Choose products with less packaging.",
+        "Keep recyclables clean and sorted.",
+        "Review your waste habits."
+    ],
+
+    plastic: [
+        "Carry a reusable water bottle.",
+        "Avoid unnecessary plastic bags.",
+        "Use reusable shopping bags.",
+        "Choose products with less packaging.",
+        "Reuse suitable containers.",
+        "Avoid disposable cutlery where practical.",
+        "Review your plastic consumption."
+    ]
+
+};
+
+
+function generatePlan() {
+
+    const goal = document.getElementById("ecoGoal").value;
+
+    const days = Number(document.getElementById("ecoDays").value);
+
+    const activities = plans[goal];
+
+    totalTasks = days;
+
+    let output = "<h3>Your " + days + "-Day EcoPlan</h3>";
+
+    let progressHTML = "";
+
+    for (let i = 0; i < days; i++) {
+
+        const activity = activities[i % activities.length];
+
+        output +=
+            "<p>Day " + (i + 1) + ": " + activity + "</p>";
+
+        progressHTML += `
+            <div class="plan-item">
+                <label>
+                    <input type="checkbox" class="progressCheck"
+                    onchange="updateProgress()">
+                    Day ${i + 1}: ${activity}
+                </label>
+            </div>
+        `;
+
+    }
+
+    document.getElementById("planResult").innerHTML = output;
+
+    document.getElementById("progressArea").innerHTML =
+        "<h3>Track Your Progress</h3>" + progressHTML;
+
+    updateProgress();
+
+}
+
+
+function updateProgress() {
+
+    const checkboxes = document.querySelectorAll(".progressCheck");
+
+    const completed = document.querySelectorAll(
+        ".progressCheck:checked"
+    ).length;
+
+    const percentage = checkboxes.length === 0
+        ? 0
+        : Math.round((completed / checkboxes.length) * 100);
+
+    document.getElementById("progressResult").textContent =
+        "Your Progress: " + completed + "/" +
+        checkboxes.length + " activities completed (" +
+        percentage + "%).";
+
+}
+
+</script>
+
+</body>
+</html>
